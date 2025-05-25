@@ -6,12 +6,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 
@@ -31,11 +36,20 @@ public class PeriplusCartTest {
     }
 
     @BeforeMethod
-    public void setUp() {
-        //System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
-        WebDriverManager.chromedriver().setup(); // Force ChromeDriver update
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Increased wait time
+    public void setUp() throws MalformedURLException {
+        WebDriverManager.chromedriver().setup();
+
+        //testing locally (comment this if testing portable with docker)
+        //WebDriverManager.chromedriver().setup();
+        //driver = new ChromeDriver();
+
+        //testing portable with docker (comment this out if testing locally)
+        driver = new RemoteWebDriver(
+                new URL("http://localhost:4444/wd/hub"),
+                new ChromeOptions()
+        );
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.manage().window().maximize();
         testLog.append("Browser opened.\n");
     }
