@@ -11,7 +11,7 @@
 **Perequisites**: make sure maven, jdk, google chrome is already installed.
 1. Run `docker-compose up --build`
 2. After building run `docker-compose run selenium`
-3. go to `/src/com.example/PeriPlusCartTest.java`, right click it, then press run, or go to file and run it. You can either run it locally or with docker container.
+3. go to `/src/test/java.com.example/PeriPlusCartTest.java`, right click it, then press run, or go to file and run it. You can either run it locally or with docker container.
 4. Watch the automation.
 `
 
