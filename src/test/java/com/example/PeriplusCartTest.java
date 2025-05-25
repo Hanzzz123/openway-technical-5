@@ -37,8 +37,6 @@ public class PeriplusCartTest {
 
     @BeforeMethod
     public void setUp() throws MalformedURLException {
-        WebDriverManager.chromedriver().setup();
-
         //testing locally (comment this if testing portable with docker)
         //WebDriverManager.chromedriver().setup();
         //driver = new ChromeDriver();
