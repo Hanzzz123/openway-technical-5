@@ -145,7 +145,7 @@ public class PeriplusCartTest {
             wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
             WebElement cart =  driver.findElement(By.id("show-your-cart"));
             WebElement cartLink = cart.findElement(By.cssSelector("a[href='https://www.periplus.com/checkout/cart']"));
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             wait.until(ExpectedConditions.elementToBeClickable(cartLink));
             cartLink.click();
             testLog.append("Navigated to cart page.\n");
