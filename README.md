@@ -16,7 +16,7 @@
 ## Instruction for running without docker 
 1. In .env file, initialize SELENIUM_MODE to LOCAL
  2. go to `/src/test/java.com.example/PeriPlusCartTest.java`
- 3. right click it, then press run, or go to file and run it.
+ 3. right click it, then press run, or go to file and run it (assuming you have eclipse, intellij, etc).
 
 
 ## Instruction For running with docker
