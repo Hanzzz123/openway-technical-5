@@ -9,8 +9,9 @@
 
 # How to Run the Program
 **Perequisites**: 
-1. make sure maven, jdk, google chrome is already installed.   
-2. Copy .env.exampe to .env, provide your already registered email and password  
+1. make sure maven, jdk, google chrome is already installed.
+2. Create .env file.
+3. Copy .env.exampe to .env, provide your already registered email and password  
 
 ## Instruction for running without docker 
 1. In .env file, initialize SELENIUM_MODE to LOCAL
